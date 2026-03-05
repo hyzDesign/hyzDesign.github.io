@@ -1,0 +1,684 @@
+@charset "utf-8";
+
+/* 폰트 */
+/* Pretendard Variable */
+/* font-family: "Pretendard Variable", sans-serif; */
+/* Prata */
+/* font-family: "Prata", serif; */
+
+/* 초기화 */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+
+html {
+  font-size: 10px;
+}
+body {
+  font-family: 'Pretendard Variable', sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  background-image: url(/image/blacknoise.jpg);
+  color: #fff;
+}
+
+/*img, iframe{vertical-align: top;}*/
+img,
+iframe {
+  display: block;
+}
+.center {
+  width: 1200px;
+  margin: 0px auto;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 600;
+  transition: 300ms;
+}
+a:hover,
+a:focus,
+a:active {
+  color: #69f;
+}
+
+/* header */
+header {
+  background-image: url(/image/blacknoise.jpg);
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px 0px;
+}
+
+.logo > a > img {
+  width: 100%;
+}
+
+.gnb > a {
+  margin-left: 40px;
+}
+
+.section-title {
+  font-family: 'Prata', serif;
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 80px;
+  text-align: center;
+}
+.section-sub-title {
+  font-family: 'Prata', serif;
+  font-size: 3rem;
+  margin: 80px 0 100px 0;
+  text-align: center;
+}
+
+/* main visual */
+#main-visual {
+  background-image: url(/image/blacknoise.jpg);
+  display: flex;
+  flex-direction: column; /* 세로 배치 */
+  justify-content: center; /* 수직 중앙 */
+  align-items: center; /* 수평 중앙 */
+  height: 100vh; /* 화면 높이 전체 */
+  position: relative;
+  text-align: center;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+.main-img-wrap {
+  position: relative;
+  width: 50%;
+}
+
+.portfoliotext-img {
+  display: inline-block;
+  position: relative; /* z-index 적용 */
+  width: 100%;
+  z-index: 1; /* design circle 아래 */
+}
+
+.designcircle-img {
+  position: absolute; /* portfolio text 위에 */
+  top: -35%; /* 조정 가능 */
+  left: 0; /* 수평 중앙 */
+  width: 45%;
+  z-index: 2; /* portfolio text 위 */
+}
+
+#main-visual p {
+  margin-top: 50px; /* 이미지 아래 공간 */
+  font-size: 16px;
+  color: white;
+}
+
+#profile {
+  margin-top: 80px;
+}
+.about-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  margin: 0 auto;
+}
+
+.ab-text-left {
+  text-align: right;
+  padding-right: 0.5rem;
+}
+
+/*
+.ab-text-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10rem;
+}
+*/
+
+.ab-text-left h5 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.ab-text-left > h5 {
+  margin: 5px 0px;
+}
+
+.skill-logo img {
+  margin-left: auto;
+  padding-bottom: 20px;
+}
+
+.profiletop {
+  opacity: 50%;
+}
+
+.ab-img-wrap {
+  position: relative;
+  width: 40%;
+  margin: 0 auto;
+}
+
+.profileimg-img {
+  display: inline-block;
+  position: relative; /* z-index 적용 */
+  width: 100%;
+  z-index: 1; /* design circle 아래 */
+}
+
+.profiletext-img {
+  position: absolute; /* portfolio text 위에 */
+  top: -10%; /* 조정 가능 */
+  left: 25%; /* 수평 중앙 */
+  width: 50%;
+  z-index: 2; /* portfolio text 위 */
+}
+
+/*
+.ab-img-wrap > img {
+  width: 100%;
+  object-fit: cover;
+}
+*/
+
+.profile-bottom {
+  opacity: 50%;
+}
+
+.ab-text-right {
+  text-align: left;
+  padding-right: 0.5rem;
+}
+
+/*
+.ab-text-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10rem;
+}
+*/
+.ab-text-right h5 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+.ab-text-right > h5 {
+  margin: 5px 0px;
+}
+
+/* work */
+.card-thumbnail > img {
+  width: 100%;
+}
+.card-detail {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.card-detail > h5 {
+  font-size: 3rem;
+}
+.card-detail > ul > li {
+  line-height: 2.6rem;
+}
+.card-detail .long-btns {
+  display: flex;
+}
+.card-detail .long-btns > a {
+  color: #212121;
+  font-size: 1.8rem;
+  font-weight: bold;
+  display: block;
+  line-height: 38px;
+  border: 1px solid #516768;
+  padding: 0px 25px;
+  border-radius: 32px;
+  font-style: italic;
+}
+.card-detail .long-btns > a:first-child {
+  margin-right: 20px;
+}
+.card-detail .long-btns > a:hover,
+.card-detail .long-btns > a:focus {
+  background-color: #fff;
+  color: #333;
+}
+
+/* 카드형 슬라이더 */
+:root {
+  --card-width: 500px;
+  --blur-value: 4px; /* 블러 강도 조절 */
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 700px;
+}
+
+.slider-track {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: var(--card-width);
+  height: 100%;
+  transition: transform 0.5s ease;
+  cursor: grab;
+  user-select: none; /* 드래그 시 내부 텍스트나 번호가 선택되지 않게 방지 */
+}
+
+.slider-track:active {
+  cursor: grabbing; /* 클릭 중일 때 꽉 쥔 손모양 */
+}
+
+.card {
+  position: absolute;
+  min-width: var(--card-width);
+  color: #212121;
+  background: #fff;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+
+  /* 기본 상태: 작고 뒤로 보냄 */
+  transform: scale(0.8);
+  opacity: 0.6;
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+
+/* 블러 효과를 주고 싶을 때 이 클래스를 카드에 유지 */
+.blur-effect {
+  filter: blur(var(--blur-value));
+}
+
+/* 가운데 강조된 카드 */
+.card.active {
+  transform: scale(1);
+  opacity: 1;
+  z-index: 10;
+  transform: translateX(0) scale(1);
+  filter: blur(0); /* 활성 카드는 블러 제거 */
+}
+
+/* 왼쪽 카드 */
+.card.prev-card {
+  opacity: 0.7;
+  z-index: 5;
+  transform: translateX(-300px) scale(0.8);
+  filter: blur(var(--blur-value));
+}
+
+/* 오른쪽 카드 */
+.card.next-card {
+  opacity: 0.7;
+  z-index: 5;
+  transform: translateX(300px) scale(0.8);
+  filter: blur(var(--blur-value));
+}
+
+.controls {
+  margin-top: 10px;
+}
+
+.indicator-container {
+  display: flex;
+  gap: 15px; /* 점 사이 간격 */
+  padding: 10px 0;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: #555; /* 비활성 상태 색상 */
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* 활성화된 점 스타일 */
+.dot.active {
+  background-color: #fff; /* 활성 상태 색상 */
+  transform: scale(1.3);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* shorts */
+.short {
+  margin-top: 80px;
+}
+.short > ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.short > ul > li {
+  width: 23.5%;
+}
+.short > ul > li > a {
+  position: relative;
+}
+.short > ul > li > a > div.short-title {
+  opacity: 0;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  transition: 0.6s;
+}
+.short > ul > li > a:hover > div.short-title {
+  opacity: 1;
+}
+.short > ul > li > a > div.short-title > span {
+  display: block;
+  margin-bottom: 24px;
+  font-size: 2rem;
+}
+.short > ul > li > a > div.short-title > img {
+  width: 60px;
+}
+.short-thumnail {
+  width: 100%;
+}
+
+/* contact */
+#contact {
+  margin: 160px 0px;
+}
+
+#contact .contact-list {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 50px 0;
+}
+
+#contact .contact-list > li > a {
+  display: flex;
+  gap: 10px;
+}
+
+#thanksyou {
+  justify-items: center;
+  margin-top: 150px;
+}
+
+/* footer */
+footer {
+  text-align: center;
+  padding: 40px;
+  background-image: url(/image/blacknoise.jpg);
+}
+
+/* 특정 스크롤 값에서 맨위로가기 버튼이 보였다 안보였다 설정 디자인 */
+.btn-top {
+  position: fixed;
+  width: 40px;
+  right: 60px;
+  bottom: 120px;
+  opacity: 0;
+  transition: 0.5s;
+}
+.btn-top img {
+  width: 100%;
+}
+.btn-top.show {
+  opacity: 1;
+}
+
+/* tablet */
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  body {
+    font-size: 1.4rem;
+  }
+  .center {
+    width: initial;
+    padding: 0px 32px;
+  }
+  header {
+    padding: 10px 0px;
+  }
+  .section-title {
+    font-size: 3.6rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+  }
+  .section-sub-title {
+    font-family: 'Prata', serif;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  #about {
+    margin-top: calc((100vw * 9 / 16) + 80px);
+  }
+  .ab-img-wrap {
+    width: 40%;
+  }
+  .ab-img-wrap > img {
+    width: 100%;
+  }
+  .ab-text-wrap {
+    padding-left: 6rem;
+  }
+  .ab-text-wrap > h4 {
+    font-size: 2.8rem;
+  }
+  .ab-text-wrap > h5 {
+    font-size: 1.6rem;
+  }
+  #skill {
+    margin: 100px 0px;
+  }
+  #skill h4 > strong {
+    font-size: 2.2rem;
+  }
+  .long-list > li {
+    display: block;
+    margin-bottom: 60px;
+  }
+  .long-thumbnail > img {
+    width: 100%;
+  }
+  .card-detail {
+    padding: 40px 0px;
+  }
+  .card-detail > ul {
+    margin: 32px 0px;
+  }
+  .short {
+    margin-top: 40px;
+  }
+  .short > ul > li {
+    flex: 1 1 0;
+    margin: 0px 20px;
+  }
+  .short > ul > li:first-child {
+    margin-left: 0px;
+  }
+  .short > ul > li:last-child {
+    margin-right: 0px;
+  }
+  .short > ul > li > a {
+    display: block;
+  }
+  .short > ul > li > a > img {
+    width: 100%;
+  }
+  #contact {
+    margin: 100px 0px;
+  }
+  footer {
+    padding-bottom: 40px;
+  }
+} /* tablet End */
+
+/* mobile */
+@media screen and (max-width: 767px) {
+  :root {
+    --card-width: 320px;
+    --blur-value: 4px; /* 블러 강도 조절 */
+  }
+
+  body {
+    font-size: 1.4rem;
+  }
+  .center {
+    width: initial;
+    padding: 8px 18px;
+  }
+  .gnb > a {
+    font-size: 1.4rem;
+    margin-left: 10px;
+  }
+  #main-visual > video {
+    top: 46px; /* 본인의 헤더 높이만큼 설정 */
+  }
+  .section-title {
+    font-size: 2.6rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .section-sub-title {
+    font-family: 'Prata', serif;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  #about {
+    margin-top: calc((100vw * 9 / 16) + 60px);
+    text-align: center;
+  }
+  .about-inner {
+    display: block;
+    width: 80%;
+  }
+  .ab-img-wrap {
+    width: 70%;
+    margin: 0px auto;
+  }
+  .ab-img-wrap > img {
+    width: 100%;
+  }
+  .ab-text-wrap {
+    width: 80%;
+    padding-left: 0;
+    margin: 28px auto 0 auto;
+  }
+  .ab-text-wrap > h4 {
+    font-size: 2.2rem;
+  }
+  .ab-text-wrap > h5 {
+    font-size: 1.6rem;
+    margin: 24px 0px;
+  }
+  .ab-text-wrap h5 {
+    font-size: 1.6rem;
+  }
+  #skill {
+    margin: 100px 0px;
+  }
+  #skill h4 {
+    margin-bottom: 16px;
+  }
+  #skill h4 > strong {
+    font-size: 2.2rem;
+  }
+  #skill > ul {
+    flex-wrap: wrap;
+  }
+  #skill > ul > li {
+    width: 50%;
+    margin-bottom: 40px;
+  }
+  #skill > ul > li:last-child {
+    margin-bottom: 0px;
+  }
+  .slider-container {
+    height: 75vh;
+  }
+  .card-thumbnail > img {
+    width: 100%;
+  }
+  .card-detail {
+    padding: 20px;
+  }
+  .card-detail > ul {
+    margin: 20px 0px;
+  }
+  .card-detail .long-btns > a {
+    font-size: 1.4rem;
+  }
+
+  .short {
+    margin-top: 40px;
+  }
+  .short > ul > li {
+    width: 47%;
+  }
+  .short > ul > li:nth-last-child(2n-1) {
+    margin-left: 6%;
+    margin-bottom: 20px;
+  }
+  .short > ul > li > a {
+    display: block;
+  }
+  .short > ul > li > a > img {
+    width: 100%;
+  }
+  #contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 60px 0px;
+  }
+  #contact .contact-list {
+    display: block;
+    padding: 20px 0;
+  }
+  #contact .contact-list li {
+    padding: 5px 0;
+  }
+  footer {
+    padding: 16px;
+  }
+  .btn-top {
+    right: 20px;
+    bottom: 60px;
+  }
+} /* mobile End */
