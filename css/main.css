@@ -74,11 +74,15 @@ header {
 }
 
 .section-title {
-  font-family: 'Prata', serif;
-  font-size: 4rem;
-  font-weight: 800;
-  margin-bottom: 80px;
-  text-align: center;
+  font-family: 'Pretendard Variable', serif;
+  font-size: 96px;
+  font-weight: 900;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: left;
+  padding-left: 120px;
+  color: #d9f4ff;
+  -webkit-text-stroke: 2px white;
 }
 .section-sub-title {
   font-family: 'Prata', serif;
@@ -171,14 +175,14 @@ header {
 
 .ab-img-wrap {
   position: relative;
-  width: 40%;
+  width: 50%;
   margin: 0 auto;
 }
 
 .profileimg-img {
   display: inline-block;
   position: relative; /* z-index 적용 */
-  width: 100%;
+  height: 100%;
   z-index: 1; /* design circle 아래 */
 }
 
@@ -220,6 +224,16 @@ header {
 }
 .ab-text-right > h5 {
   margin: 5px 0px;
+}
+
+/* CARD */
+.sky-noise {
+  display: flex;
+  justify-content: center;
+}
+
+.sky-noise img {
+  width: 100%s;
 }
 
 /* work */
