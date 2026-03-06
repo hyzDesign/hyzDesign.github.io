@@ -227,13 +227,79 @@ header {
 }
 
 /* CARD */
+.card-wrap {
+  padding-top: 100px;
+  padding-left: 120px;
+  position: relative;
+  width: 20%;
+}
+
+.cardtext-img {
+  display: inline-block;
+  position: relative; /* z-index 적용 */
+  width: 100%;
+  z-index: 1; /* design circle 아래 */
+}
+
+.designtext-img {
+  position: absolute; /* portfolio text 위에 */
+  top: 80%; /* 조정 가능 */
+  left: 45%; /* 수평 중앙 */
+  width: 60%;
+  z-index: 2; /* portfolio text 위 */
+}
+
+.softwere {
+  text-align: right;
+  padding-top: 20px;
+  padding-right: 120px;
+}
+
+.softweretext-img {
+  display: block;
+  margin-left: auto;
+  padding-top: 50px;
+  text-align: right;
+  padding-right: 120px;
+}
+
 .sky-noise {
+  padding-top: 20px;
   display: flex;
   justify-content: center;
 }
 
 .sky-noise img {
   width: 100%s;
+}
+
+/* PRODUCT */
+.product-wrap {
+  padding-top: 100px;
+  padding-left: 120px;
+  position: relative;
+  width: 20%;
+}
+
+.producttext-img {
+  display: inline-block;
+  position: relative; /* z-index 적용 */
+  width: 100%;
+  z-index: 1; /* design circle 아래 */
+}
+
+.designtext-png {
+  position: absolute; /* portfolio text 위에 */
+  top: 75%; /* 조정 가능 */
+  left: 65%; /* 수평 중앙 */
+  width: 50%;
+  z-index: 2; /* portfolio text 위 */
+}
+
+.product-softwere {
+  text-align: right;
+  padding-top: 20px;
+  padding-right: 120px;
 }
 
 /* work */
