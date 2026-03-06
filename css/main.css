@@ -227,7 +227,7 @@ header {
 }
 
 /* CARD */
-.card-wrap {
+.title-wrap {
   padding-top: 100px;
   padding-left: 120px;
   position: relative;
@@ -263,13 +263,14 @@ header {
   padding-right: 120px;
 }
 
-.sky-noise {
+.content-wrap {
   padding-top: 20px;
   display: flex;
   justify-content: center;
+  background-image: url(/image/sky\ blue\ noise.png);
 }
 
-.sky-noise img {
+.content-wrap img {
   width: 100%s;
 }
 
