@@ -252,6 +252,7 @@ header {
 .softwere {
   text-align: right;
   padding-top: 20px;
+  padding-bottom: 20px;
   padding-right: 120px;
 }
 
@@ -267,11 +268,17 @@ header {
   padding-top: 20px;
   display: flex;
   justify-content: center;
-  background-image: url(/image/sky\ blue\ noise.png);
+  background-image: url(/image/skyblue_noise.png);
 }
 
 .content-wrap img {
   width: 100%s;
+}
+
+.viewplan-img {
+  padding-top: 70px;
+  padding-left: 120px;
+  padding-bottom: 100px;
 }
 
 /* PRODUCT */
@@ -300,6 +307,19 @@ header {
 .product-softwere {
   text-align: right;
   padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 120px;
+}
+
+/* magazine */
+.magazinetitle-img {
+  padding-left: 120px;
+}
+
+.magazine-softwere {
+  text-align: right;
+  padding-top: 20px;
+  padding-bottom: 20px;
   padding-right: 120px;
 }
 
@@ -498,6 +518,10 @@ button {
 }
 
 /* contact */
+.contact-img {
+  justify-items: center;
+}
+
 #contact {
   margin: 160px 0px;
 }
