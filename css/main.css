@@ -230,6 +230,7 @@ header {
 .title-wrap {
   padding-top: 100px;
   padding-left: 120px;
+  padding-bottom: 20px;
   position: relative;
   width: 20%;
 }
@@ -318,9 +319,21 @@ header {
 
 .magazine-softwere {
   text-align: right;
-  padding-top: 20px;
   padding-bottom: 20px;
   padding-right: 120px;
+}
+
+.softwere-img {
+  display: block;
+  margin-left: auto;
+  margin-top: -50px;
+  text-align: right;
+  padding-right: 120px;
+}
+
+/* motion graphics */
+.motiontitle-img {
+  padding-left: 120px;
 }
 
 /* work */
@@ -519,7 +532,9 @@ button {
 
 /* contact */
 .contact-img {
-  justify-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #contact {
