@@ -336,6 +336,10 @@ header {
   padding-left: 120px;
 }
 
+.card-thumbnail {
+  background-image: url(/image/skyblue_noise.png);
+}
+
 /* work */
 .card-thumbnail > img {
   width: 100%;
@@ -373,6 +377,9 @@ header {
   background-color: #fff;
   color: #333;
 }
+
+/* short form */
+/*html 코드 <h4 class="section-sub-title">Short Form</h4>*/
 
 /* 카드형 슬라이더 */
 :root {
@@ -531,7 +538,7 @@ button {
 }
 
 /* contact */
-.contact-img {
+#contact .contact-img {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -598,12 +605,17 @@ footer {
     font-weight: 700;
     margin-bottom: 40px;
   }
+  /*
+  html 코드
+  <h4 class="section-sub-title">Long From</h4>
+  
   .section-sub-title {
     font-family: 'Prata', serif;
     font-size: 2rem;
     margin-bottom: 40px;
     text-align: center;
   }
+    */
   #about {
     margin-top: calc((100vw * 9 / 16) + 80px);
   }
