@@ -268,14 +268,19 @@ header {
 }
 
 .content-wrap {
-  padding-top: 20px;
+  height: 414px;
   display: flex;
   justify-content: center;
+  align-items: center;
   background-image: url(/image/skyblue_noise.png);
 }
 
-.content-wrap img {
-  width: 100%s;
+#card-design .content-wrap img {
+  width: 30%;
+}
+
+#product-design .content-wrap img {
+  width: 60%;
 }
 
 .viewplan-img {
