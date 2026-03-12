@@ -47,10 +47,11 @@ iframe {
 a {
   color: #fff;
   text-decoration: none;
-  font-size: 1.8rem;
   font-weight: 600;
   transition: 300ms;
+  display: inline-block;
 }
+
 a:hover,
 a:focus,
 a:active {
@@ -244,21 +245,6 @@ header {
   width: 20%;
 }
 
-.cardtext-img {
-  display: inline-block;
-  position: relative; /* z-index 적용 */
-  width: 100%;
-  z-index: 1; /* design circle 아래 */
-}
-
-.designtext-img {
-  position: absolute; /* portfolio text 위에 */
-  top: 80%; /* 조정 가능 */
-  left: 45%; /* 수평 중앙 */
-  width: 60%;
-  z-index: 2; /* portfolio text 위 */
-}
-
 .softweretext-img {
   display: block;
   margin-left: auto;
@@ -289,9 +275,9 @@ header {
 }
 
 .viewplan-img {
-  padding-top: 70px;
-  padding-left: 120px;
-  padding-bottom: 100px;
+  margin-top: 70px;
+  margin-left: 120px;
+  margin-bottom: 100px;
 }
 
 /* PRODUCT */
