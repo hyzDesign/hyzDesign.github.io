@@ -261,17 +261,32 @@ header {
   background-image: url(/image/skyblue_noise.png);
 }
 
+.card1-img {
+  margin-bottom: 200px;
+  position: relative; /* z-index 적용 */
+  margin-left: -400px;
+  z-index: 1;
+}
+
+.card2-img {
+  margin-top: 200px;
+  position: absolute; /* portfolio text 위에 */
+  margin-right: -400px;
+  z-index: 2;
+}
+
 /* 이미지 크기 조절 */
 #card-design .content-wrap img {
   width: 450px;
 }
 
 #product-design .content-wrap img {
-  width: 900px;
+  margin-top: 100px;
+  width: 1100px;
 }
 
 #magazine-design .content-wrap img {
-  width: 900px;
+  width: 1100px;
 }
 
 .viewplan-img {
