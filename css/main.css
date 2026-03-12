@@ -275,12 +275,17 @@ header {
   background-image: url(/image/skyblue_noise.png);
 }
 
+/* 이미지 크기 조절 */
 #card-design .content-wrap img {
-  width: 30%;
+  width: 450px;
 }
 
 #product-design .content-wrap img {
-  width: 60%;
+  width: 900px;
+}
+
+#magazine-design .content-wrap img {
+  width: 900px;
 }
 
 .viewplan-img {
@@ -376,10 +381,11 @@ header {
 
 .short-bg {
   width: 100%;
-  height: 50%;
+  height: 414px;
+  left: 0;
   background-image: url(/image/skyblue_noise.png);
   position: absolute;
-  margin-top: 80px;
+  margin-top: 50px;
 }
 
 /* 카드형 슬라이더 */
@@ -400,9 +406,10 @@ header {
 .slider-bg {
   margin-top: -50px;
   width: 100%;
-  height: 50%;
+  height: 414px;
   background-image: url(/image/skyblue_noise.png);
   position: absolute;
+  z-index: -1;
 }
 
 .slider-track {
@@ -437,7 +444,7 @@ header {
 
   /* 기본 상태: 작고 뒤로 보냄 */
   transform: scale(0.8);
-  opacity: 0.6;
+  opacity: 1;
   transition: all 0.5s ease;
   z-index: 1;
 }
@@ -458,7 +465,7 @@ header {
 
 /* 왼쪽 카드 */
 .card.prev-card {
-  opacity: 0.7;
+  opacity: 1;
   z-index: 5;
   transform: translateX(-300px) scale(0.8);
   filter: blur(var(--blur-value));
@@ -466,7 +473,7 @@ header {
 
 /* 오른쪽 카드 */
 .card.next-card {
-  opacity: 0.7;
+  opacity: 1;
   z-index: 5;
   transform: translateX(300px) scale(0.8);
   filter: blur(var(--blur-value));
