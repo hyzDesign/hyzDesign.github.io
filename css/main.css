@@ -24,15 +24,16 @@ body {
   font-family: 'Pretendard Variable', sans-serif;
   font-size: 1.6rem;
   line-height: 1.6;
+  background-color: #111;
   background-image: url(/image/blacknoise.jpg);
-  color: #111;
+  color: white;
 }
 
 h4 {
   text-align: right;
   padding-top: 20px;
   padding-bottom: 20px;
-  padding-right: 120px;
+  padding-right: 240px;
 }
 
 /*img, iframe{vertical-align: top;}*/
@@ -72,7 +73,7 @@ header {
   align-items: center;
   justify-content: flex-end;
   padding: 10px 0px;
-  padding-right: 120px;
+  padding-right: 240px;
 }
 
 .logo > a > img {
@@ -90,7 +91,7 @@ header {
   margin-top: 50px;
   margin-bottom: 50px;
   text-align: left;
-  padding-left: 120px;
+  padding-left: 200px;
   color: #d9f4ff;
   -webkit-text-stroke: 2px white;
 }
@@ -239,7 +240,7 @@ header {
 /* CARD */
 .title-wrap {
   padding-top: 100px;
-  padding-left: 120px;
+  padding-left: 240px;
   padding-bottom: 20px;
   position: relative;
   width: 20%;
@@ -248,9 +249,8 @@ header {
 .softweretext-img {
   display: block;
   margin-left: auto;
-  padding-top: 50px;
   text-align: right;
-  padding-right: 120px;
+  padding-right: 240px;
 }
 
 .content-wrap {
@@ -277,28 +277,32 @@ header {
 
 /* 이미지 크기 조절 */
 #card-design .content-wrap img {
-  width: 450px;
+  width: 600px;
+}
+
+#product-design .content-wrap {
+  margin-top: 50px;
 }
 
 #product-design .content-wrap img {
-  margin-top: 100px;
-  width: 1100px;
+  margin-top: 200px;
+  width: 1300px;
 }
 
 #magazine-design .content-wrap img {
-  width: 1100px;
+  width: 1300px;
 }
 
 .view-text {
   margin-top: 70px;
-  margin-left: 120px;
+  margin-left: 240px;
   margin-bottom: 100px;
 }
 
 /* PRODUCT */
 .product-wrap {
   padding-top: 100px;
-  padding-left: 120px;
+  padding-left: 240px;
   position: relative;
   width: 20%;
 }
@@ -320,20 +324,21 @@ header {
 
 /* magazine */
 .magazinetitle-img {
-  padding-left: 120px;
+  margin-top: 150px;
+  padding-left: 240px;
 }
 
 .softwere-img {
   display: block;
   margin-left: auto;
-  margin-top: -50px;
   text-align: right;
-  padding-right: 120px;
+  padding-right: 240px;
 }
 
 /* motion graphics */
 .motiontitle-img {
-  padding-left: 120px;
+  margin-top: 150px;
+  padding-left: 240px;
 }
 
 /* work */
@@ -377,7 +382,8 @@ header {
 /* short form */
 /*html 코드 <h4 class="section-sub-title">Short Form</h4>*/
 .shortformtext-img {
-  padding-left: 120px;
+  margin-top: 150px;
+  padding-left: 240px;
 }
 
 .short-bg {
