@@ -155,19 +155,10 @@ header {
 }
 
 .ab-text-left {
-  flex: 1;
+  width: 33.3%;
   text-align: right;
   padding-right: 0.5rem;
 }
-
-/*
-.ab-text-left {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-left: 10rem;
-}
-*/
 
 .ab-text-left h5 {
   font-size: 2rem;
@@ -186,11 +177,18 @@ header {
 .profiletop {
   opacity: 50%;
 }
+.profiletop img {
+  width: 100%;
+  min-width: 250px;
+}
 
 .ab-img-wrap {
   position: relative;
   flex: 1;
   margin: 0 auto;
+}
+.ab-img-wrap .profileimg-img {
+  min-width: 320px;
 }
 
 .profileimg-img {
@@ -204,7 +202,7 @@ header {
   position: absolute; /* portfolio text 위에 */
   top: -10%; /* 조정 가능 */
   left: 25%; /* 수평 중앙 */
-  width: 50%;
+  max-width: 180px;
   z-index: 2; /* portfolio text 위 */
 }
 
@@ -218,9 +216,13 @@ header {
 .profile-bottom {
   opacity: 50%;
 }
+.profile-bottom img {
+  width: 100%;
+  min-width: 250px;
+}
 
 .ab-text-right {
-  flex: 1;
+  width: 33.3%;
   text-align: left;
   padding-right: 0.5rem;
 }
@@ -241,20 +243,13 @@ header {
   margin: 5px 0px;
 }
 
-/* CARD */
+/* 배경 공통 */
 .title-wrap {
   padding-top: 100px;
   padding-left: 240px;
   padding-bottom: 20px;
   position: relative;
   width: 20%;
-}
-
-.softweretext-img {
-  display: block;
-  margin-left: auto;
-  text-align: right;
-  padding-right: 240px;
 }
 
 .content-wrap {
@@ -265,6 +260,14 @@ header {
   background-image: url(/image/skyblue_noise.png);
 }
 
+.softweretext-img {
+  display: block;
+  margin-left: auto;
+  text-align: right;
+  padding-right: 240px;
+}
+
+/* 카드 */
 .card1-img {
   margin-bottom: 200px;
   position: relative; /* z-index 적용 */
@@ -288,11 +291,6 @@ header {
   margin-top: 50px;
 }
 
-#product-design .content-wrap img {
-  margin-top: 200px;
-  width: 1300px;
-}
-
 #magazine-design .content-wrap img {
   width: 1300px;
 }
@@ -301,14 +299,6 @@ header {
   margin-top: 70px;
   margin-left: 240px;
   margin-bottom: 100px;
-}
-
-/* PRODUCT */
-.product-wrap {
-  padding-top: 100px;
-  padding-left: 240px;
-  position: relative;
-  width: 20%;
 }
 
 .producttext-img {
@@ -324,6 +314,11 @@ header {
   left: 65%; /* 수평 중앙 */
   width: 50%;
   z-index: 2; /* portfolio text 위 */
+}
+
+#product-design .content-wrap img {
+  margin-top: 200px;
+  width: 1300px;
 }
 
 /* magazine */
@@ -639,6 +634,9 @@ footer {
     font-weight: 700;
     margin-bottom: 40px;
   }
+  .content-wrap {
+    height: 300px;
+  }
   /*
   html 코드
   <h4 class="section-sub-title">Long From</h4>
@@ -656,6 +654,11 @@ footer {
   /* .ab-img-wrap {
     width: 100%;
   } */
+  .about-inner {
+    width: 90%;
+    gap: 30px;
+    margin: 0 auto;
+  }
   .ab-img-wrap > img {
     width: 100%;
   }
@@ -668,11 +671,33 @@ footer {
   .ab-text-wrap > h5 {
     font-size: 1.6rem;
   }
-  #skill {
-    margin: 100px 0px;
+  .software-wrap {
+    display: none;
   }
-  #skill h4 > strong {
-    font-size: 2.2rem;
+  /* 뷰 플랜 */
+  #card-design {
+    position: relative;
+    /* background-color: #69f; */
+  }
+  .view-text {
+    position: absolute;
+    margin: 0;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  /* 프로덕트 */
+  #product-design .content-wrap img {
+    margin-top: 200px;
+    width: 900px;
+    padding-bottom: 50px;
+  }
+  /* 매거진 */
+  #card-design .content-wrap img {
+    width: 450px;
+  }
+  #magazine-design .content-wrap img {
+    width: 900px;
   }
   .long-list > li {
     display: block;
