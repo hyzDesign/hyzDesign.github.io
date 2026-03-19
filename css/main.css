@@ -269,7 +269,7 @@ header {
 
 /* 카드 */
 .card-img-wrap {
-  width: 500px;
+  width: 900px;
   position: relative;
 }
 .card1-img {
@@ -693,12 +693,18 @@ footer {
   }
 
   /* 카드 */
-
+  .card-img-wrap {
+    width: 650px;
+    position: relative;
+  }
   /* 프로덕트 */
   #product-design .content-wrap img {
     margin-top: 200px;
     width: 900px;
     padding-bottom: 50px;
+  }
+  #magazine-design .content-wrap img {
+    width: 500px;
   }
   /* 매거진 */
   .magazinetitle-img {
@@ -838,6 +844,9 @@ footer {
   .ab-img-wrap > img {
     width: 100%;
   }
+  .ab-img-wrap .profileimg-img {
+    min-width: 200px;
+  }
   .ab-text-wrap {
     width: 80%;
     padding-left: 0;
@@ -892,9 +901,6 @@ footer {
     margin-right: 0;
   }
   /* 프로덕트 */
-  #product-design .content-wrap {
-    width: 10%;
-  }
 
   .slider-container {
     height: 75vh;
