@@ -862,6 +862,10 @@ footer {
   #skill > ul > li:last-child {
     margin-bottom: 0px;
   }
+
+  .software-wrap {
+    display: none;
+  }
   /* 공통 */
   .title-wrap {
     padding-left: 0;
