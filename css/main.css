@@ -260,7 +260,7 @@ header {
   background-image: url(/image/skyblue_noise.png);
 }
 
-.softweretext-img {
+.softwaretext-img {
   display: block;
   margin-left: auto;
   text-align: right;
@@ -327,7 +327,7 @@ header {
   padding-left: 240px;
 }
 
-.softwere-img {
+.software-img {
   display: block;
   margin-left: auto;
   text-align: right;
@@ -637,23 +637,11 @@ footer {
   .content-wrap {
     height: 300px;
   }
-  /*
-  html 코드
-  <h4 class="section-sub-title">Long From</h4>
-  
-  .section-sub-title {
-    font-family: 'Prata', serif;
-    font-size: 2rem;
-    margin-bottom: 40px;
-    text-align: center;
-  }
-    */
+
   #about {
     margin-top: calc((100vw * 9 / 16) + 80px);
   }
-  /* .ab-img-wrap {
-    width: 100%;
-  } */
+
   .about-inner {
     width: 90%;
     gap: 30px;
@@ -682,10 +670,20 @@ footer {
   .view-text {
     position: absolute;
     margin: 0;
-    top: 10%;
+    top: 250px;
     left: 50%;
     transform: translateX(-50%);
   }
+
+  .title-wrap {
+    padding-left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* 카드 */
+
   /* 프로덕트 */
   #product-design .content-wrap img {
     margin-top: 200px;
@@ -693,12 +691,34 @@ footer {
     padding-bottom: 50px;
   }
   /* 매거진 */
+  .magazinetitle-img {
+    padding-left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
   #card-design .content-wrap img {
     width: 450px;
   }
   #magazine-design .content-wrap img {
     width: 900px;
   }
+  /* 모션그래픽 */
+  .motiontitle-img {
+    padding-left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* 숏폼 */
+  .shortformtext-img {
+    padding-left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .long-list > li {
     display: block;
     margin-bottom: 60px;
