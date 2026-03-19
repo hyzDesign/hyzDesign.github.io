@@ -862,6 +862,26 @@ footer {
   #skill > ul > li:last-child {
     margin-bottom: 0px;
   }
+  /* 공통 */
+  .title-wrap {
+    padding-left: 0;
+  }
+  /* 카드 */
+  #card-design .content-wrap img {
+    width: 400px;
+  }
+  #card-design .card1-img {
+    margin-left: 0;
+  }
+  #card-design .card2-img {
+    margin-top: 250px;
+    margin-right: 0;
+  }
+  /* 프로덕트 */
+  #product-design .content-wrap {
+    width: 10%;
+  }
+
   .slider-container {
     height: 75vh;
   }
@@ -893,6 +913,11 @@ footer {
   }
   .short > ul > li > a > img {
     width: 100%;
+  }
+
+  /* thanks you */
+  #thanksyou img {
+    width: 90%;
   }
   #contact {
     display: flex;
