@@ -268,17 +268,27 @@ header {
 }
 
 /* 카드 */
+.card-img-wrap {
+  width: 500px;
+  position: relative;
+}
 .card1-img {
+  position: absolute;
+  left: -10%;
   margin-bottom: 200px;
   position: relative; /* z-index 적용 */
-  margin-left: -400px;
+  /* margin-left: -400px; */
+
   z-index: 1;
 }
 
 .card2-img {
+  position: absolute;
+  right: -10%;
+  bottom: 0;
   margin-top: 200px;
   position: absolute; /* portfolio text 위에 */
-  margin-right: -400px;
+  /* margin-right: -400px; */
   z-index: 2;
 }
 
