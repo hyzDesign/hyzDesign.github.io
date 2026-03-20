@@ -917,6 +917,9 @@ footer {
   .card-detail .long-btns > a {
     font-size: 1.4rem;
   }
+  .short-bg {
+    display: none;
+  }
 
   .short {
     margin-top: 40px;
