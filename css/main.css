@@ -244,12 +244,38 @@ header {
 }
 
 /* 배경 공통 */
-.title-wrap {
-  padding-top: 100px;
-  padding-left: 240px;
-  padding-bottom: 20px;
+#card-design .title-wrap {
   position: relative;
-  width: 20%;
+  left: 120px;
+  width: 200px;
+}
+
+#product-design .title-wrap {
+  position: relative;
+  left: 120px;
+  width: 370px;
+}
+
+#magazine-design .title-wrap {
+  position: relative;
+  left: 120px;
+  width: 430px;
+}
+
+#motion-graphics .title-wrap {
+  position: relative;
+  left: 120px;
+  width: 370px;
+}
+
+#shortform .title-wrap {
+  position: relative;
+  left: 120px;
+  width: 550px;
+}
+
+.title-wrap img {
+  width: 100%;
 }
 
 .content-wrap {
@@ -332,11 +358,6 @@ header {
 }
 
 /* magazine */
-.magazinetitle-img {
-  margin-top: 150px;
-  padding-left: 240px;
-}
-
 .software-img {
   display: block;
   margin-left: auto;
@@ -345,11 +366,6 @@ header {
 }
 
 /* motion graphics */
-.motiontitle-img {
-  margin-top: 150px;
-  padding-left: 240px;
-}
-
 /* work */
 .card-thumbnail > img {
   width: 100%;
@@ -390,11 +406,6 @@ header {
 
 /* short form */
 /*html 코드 <h4 class="section-sub-title">Short Form</h4>*/
-.shortformtext-img {
-  margin-top: 150px;
-  padding-left: 240px;
-}
-
 .short-bg {
   width: 100%;
   height: 414px;
@@ -646,6 +657,10 @@ footer {
   }
   .content-wrap {
     height: 300px;
+    margin: 150px 0;
+  }
+  #card-design .content-wrap {
+    margin: 100px 0;
   }
 
   #about {
@@ -672,10 +687,11 @@ footer {
   .software-wrap {
     display: none;
   }
-  /* 뷰 플랜 */
-  #card-design {
+  /* 카드 디자인 */
+  #card-design .title-wrap {
     position: relative;
-    /* background-color: #69f; */
+    left: 0;
+    width: 200px;
   }
   .view-text {
     position: absolute;
@@ -691,22 +707,28 @@ footer {
     margin-left: auto;
     margin-right: auto;
   }
-
-  /* 카드 */
   .card-img-wrap {
     width: 650px;
     position: relative;
   }
   /* 프로덕트 */
-  #product-design .content-wrap img {
-    margin-top: 200px;
-    width: 900px;
-    padding-bottom: 50px;
+  #product-design .title-wrap {
+    position: relative;
+    left: 0;
+    width: 380px;
+  }
+  #product-design .content-wrap {
+    margin-top: 100px;
   }
   #magazine-design .content-wrap img {
     width: 500px;
   }
   /* 매거진 */
+  #magazine-design .title-wrap {
+    position: relative;
+    left: 0;
+    width: 430px;
+  }
   .magazinetitle-img {
     padding-left: 0;
     display: block;
@@ -720,6 +742,11 @@ footer {
     width: 900px;
   }
   /* 모션그래픽 */
+  #motion-graphics .title-wrap {
+    position: relative;
+    left: 0;
+    width: 370px;
+  }
   .motiontitle-img {
     padding-left: 0;
     display: block;
@@ -728,6 +755,11 @@ footer {
   }
 
   /* 숏폼 */
+  #shortform .title-wrap {
+    position: relative;
+    left: 0;
+    width: 550px;
+  }
   .shortformtext-img {
     padding-left: 0;
     display: block;
