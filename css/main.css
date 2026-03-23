@@ -41,7 +41,8 @@ iframe {
   display: block;
 }
 .center {
-  width: 1200px;
+  width: 100%;
+  max-width: 1200px;
   margin: 0px auto;
 }
 a {
@@ -68,13 +69,18 @@ header {
   width: 100%;
   height: 50px;
 }
+
+main section[id] {
+  scroll-margin-top: 72px;
+}
 .header-inner {
-  width: 1200px;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 10px 0px;
+  padding: 10px 20px;
 }
 
 .logo > a > img {
@@ -83,6 +89,45 @@ header {
 
 .gnb > a {
   margin-left: 40px;
+}
+
+.btn-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  margin-right: auto;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10001;
+  flex-shrink: 0;
+}
+
+.btn-menu-bar {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: #fff;
+  border-radius: 1px;
+  transition:
+    transform 0.25s ease,
+    opacity 0.2s ease;
+}
+
+body.nav-open .btn-menu-bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+body.nav-open .btn-menu-bar:nth-child(2) {
+  opacity: 0;
+}
+
+body.nav-open .btn-menu-bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 .section-title {
@@ -389,10 +434,15 @@ header {
   margin-top: 50px;
 }
 
+.shortform-gallery {
+  position: relative;
+}
+
 /* 카드형 슬라이더 */
 :root {
   --card-width: 500px;
   --blur-value: 4px; /* 블러 강도 조절 */
+  --slider-translate-x: 300px;
 }
 
 .slider-container {
@@ -469,7 +519,7 @@ header {
 .card.prev-card {
   opacity: 1;
   z-index: 5;
-  transform: translateX(-300px) scale(0.8);
+  transform: translateX(calc(-1 * var(--slider-translate-x))) scale(0.8);
   filter: blur(var(--blur-value));
 }
 
@@ -477,7 +527,7 @@ header {
 .card.next-card {
   opacity: 1;
   z-index: 5;
-  transform: translateX(300px) scale(0.8);
+  transform: translateX(var(--slider-translate-x)) scale(0.8);
   filter: blur(var(--blur-value));
 }
 
@@ -611,6 +661,11 @@ footer {
 
 /* tablet large */
 @media screen and (max-width: 1199px) {
+  :root {
+    --card-width: min(72vw, 440px);
+    --slider-translate-x: min(32vw, 240px);
+  }
+
   body {
     font-size: 1.4rem;
   }
@@ -624,6 +679,51 @@ footer {
   .header-inner {
     width: initial;
     padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .btn-menu {
+    display: flex;
+  }
+
+  .gnb {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    padding: 28px 20px 32px;
+    margin: 0;
+    background: rgba(17, 17, 17, 0.98);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    transform: translateY(-130%);
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease,
+      visibility 0.3s;
+    z-index: 10000;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  }
+
+  body.nav-open .gnb {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .gnb > a {
+    margin-left: 0;
+    font-size: 1.5rem;
+    letter-spacing: 0.04em;
   }
   .section-title {
     font-size: 3.6rem;
@@ -631,33 +731,72 @@ footer {
     margin-bottom: 40px;
   }
   .content-wrap {
-    height: 300px;
-    margin: 150px 0;
+    height: auto;
+    min-height: 280px;
+    margin: 48px 0 80px;
+    padding: 32px 16px;
   }
   #card-design .content-wrap {
-    margin: 100px 0;
+    margin: 40px 0 72px;
   }
 
   #about {
     margin-top: calc((100vw * 9 / 16) + 80px);
   }
-  /* 부모 컨테이너 비율 맞춤 */
+  /* 프로필: 세로 스크롤형 단일 컬럼 (태블릿) */
   .about-inner {
     width: 100%;
-    padding: 0 2vw;
-    gap: 2vw;
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 0 12px;
+    gap: 28px;
+    flex-direction: column;
+    align-items: stretch;
   }
 
-  /* 텍스트 크기 축소 */
+  .ab-text-left,
+  .ab-text-right {
+    text-align: left;
+    flex: none;
+    width: 100%;
+  }
+
+  .ab-text-right {
+    display: flex;
+    flex-direction: column;
+    order: 2;
+  }
+
+  .ab-text-right .profile-bottom {
+    order: 10;
+    margin-top: 28px;
+  }
+
+  .ab-img-wrap {
+    order: 1;
+    max-width: 100%;
+  }
+
+  .ab-text-left {
+    order: 3;
+  }
+
+  .skill-logo img {
+    width: 100%;
+    max-width: 320px;
+    margin-left: 0;
+  }
+
+  /* 텍스트 크기 */
   .ab-text-left h5,
   .ab-text-right h5 {
-    font-size: 1.6vw; /* 화면 너비에 비례하여 글자 크기 조절 */
-    margin: 0.5vw 0;
+    font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+    margin: 6px 0;
   }
 
   .about-inner ul li {
-    font-size: 1.2vw;
-    line-height: 1.4;
+    font-size: clamp(1.3rem, 1.8vw, 1.5rem);
+    line-height: 1.45;
   }
 
   .profile-top img,
@@ -667,16 +806,10 @@ footer {
     height: auto;
   }
 
-  /* 장식 이미지 */
   .profiletext-img {
-    max-width: 15vw;
+    max-width: min(40%, 180px);
   }
-  /* 여백 및 스킬 로고 축소 */
-  .skill-logo img {
-    width: 60%;
-    padding-bottom: 2vw;
-    margin-left: auto;
-  }
+
   .software-wrap {
     display: none;
   }
@@ -687,11 +820,13 @@ footer {
     width: 200px;
   }
   .view-text {
-    position: absolute;
-    margin: 0;
-    top: 250px;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
+    left: 0;
+    display: block;
+    width: fit-content;
+    max-width: 200px;
+    margin: 24px auto 64px;
+    transform: none;
   }
 
   .title-wrap {
@@ -701,9 +836,17 @@ footer {
     margin-right: auto;
   }
   .card-img-wrap {
-    width: 650px;
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
     position: relative;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
   }
+
   /* 프로덕트 */
   #product-design .title-wrap {
     position: relative;
@@ -711,10 +854,7 @@ footer {
     width: 380px;
   }
   #product-design .content-wrap {
-    margin-top: 100px;
-  }
-  #magazine-design .content-wrap img {
-    width: 500px;
+    margin-top: 48px;
   }
   /* 매거진 */
   #magazine-design .title-wrap {
@@ -728,23 +868,11 @@ footer {
     margin-left: auto;
     margin-right: auto;
   }
-  #card-design .content-wrap img {
-    width: 450px;
-  }
-  #magazine-design .content-wrap img {
-    width: 900px;
-  }
   /* 모션그래픽 */
   #motion-graphics .title-wrap {
     position: relative;
-    left: 0;
+    left: 120px;
     width: 370px;
-  }
-  .motiontitle-img {
-    padding-left: 0;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   /* 카드 디자인 이미지 축소 */
@@ -796,21 +924,31 @@ footer {
   .short {
     margin-top: 40px;
   }
+  .short > ul {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px 18px;
+  }
   .short > ul > li {
-    flex: 1 1 0;
-    margin: 0px 20px;
-  }
-  .short > ul > li:first-child {
-    margin-left: 0px;
-  }
-  .short > ul > li:last-child {
-    margin-right: 0px;
+    width: 100%;
+    margin: 0;
+    flex: none;
   }
   .short > ul > li > a {
     display: block;
   }
-  .short > ul > li > a > img {
+  .short > ul > li > a > img.short-thumnail {
     width: 100%;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  .short-bg {
+    height: min(48vh, 400px);
+  }
+  .slider-container {
+    margin-top: -40px;
+    height: min(620px, 82vh);
   }
   #contact {
     margin: 100px 0px;
@@ -821,38 +959,18 @@ footer {
 }
 /* tablet large End */
 
-/* tablet small */
+/* tablet small — 넓은 태블릿 규칙과 동일한 플로우 유지 */
 @media screen and (min-width: 768px) and (max-width: 900px) {
   .about-inner {
-    display: block;
-    width: 80%;
     max-width: 480px;
   }
-  .about-inner > div {
-    margin-bottom: 30px;
-  }
-  .about-inner > div:last-child {
-    margin-bottom: 0;
-  }
-  .ab-img-wrap > img {
-    width: 100%;
-  }
-  .ab-text-wrap {
-    padding-left: 0;
-    margin: 28px auto 0 auto;
-  }
-  /* 텍스트 크기 축소 */
   .ab-text-left h5,
   .ab-text-right h5 {
-    font-size: 2.2rem;
-    margin: 0.5vw 0;
-  }
-
-  .about-inner ul li {
     font-size: 1.6rem;
-    line-height: 1.4;
   }
-  .ab-text-wrap > h4 {
+  .about-inner ul li {
+    font-size: 1.45rem;
+    line-height: 1.45;
   }
 }
 /* tablet small End */
@@ -860,8 +978,9 @@ footer {
 /* mobile */
 @media screen and (max-width: 767px) {
   :root {
-    --card-width: 320px;
+    --card-width: min(88vw, 340px);
     --blur-value: 4px; /* 블러 강도 조절 */
+    --slider-translate-x: min(36vw, 128px);
   }
 
   body {
@@ -874,6 +993,9 @@ footer {
   .header-inner {
     width: initial;
     padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
   }
 
   .center {
@@ -881,21 +1003,28 @@ footer {
     padding: 8px 18px;
   }
   #main-visual {
-    height: 400px;
+    min-height: min(72vh, 520px);
+    height: auto;
+    padding: 72px 0 40px;
     margin-top: 50px;
+    aspect-ratio: unset;
   }
   #main-visual .main-img-wrap {
     width: 100%;
     padding: 0 10px;
   }
   #main-visual p {
-    width: 70%;
-    font-size: 1.6rem;
+    width: 92%;
+    max-width: 360px;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-top: 28px;
+    padding: 0 8px;
   }
 
   .gnb > a {
     font-size: 1.4rem;
-    margin-left: 10px;
+    margin-left: 0;
   }
   #main-visual > video {
     top: 46px; /* 본인의 헤더 높이만큼 설정 */
@@ -905,6 +1034,8 @@ footer {
     font-weight: 600;
     margin-bottom: 20px;
   }
+
+  /* 숏폼 2개씩 크게 꽉 채우기 */
   .section-sub-title {
     font-family: 'Prata', serif;
     font-size: 2rem;
@@ -918,9 +1049,43 @@ footer {
     width: 100%;
   }
   .about-inner {
-    display: block;
-    width: 90%;
-    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 0 8px;
+    gap: 24px;
+  }
+
+  .ab-img-wrap {
+    order: 1;
+    width: 100%;
+  }
+
+  .ab-text-right {
+    display: flex;
+    flex-direction: column;
+    order: 2;
+    text-align: left;
+    width: 100%;
+  }
+
+  .ab-text-right .profile-bottom {
+    order: 10;
+    margin-top: 20px;
+  }
+
+  .ab-text-left {
+    order: 3;
+    text-align: left;
+    width: 100%;
+  }
+
+  .skill-logo img {
+    width: 100%;
+    max-width: 280px;
+    margin-left: 0;
   }
   /* 텍스트 크기 축소 */
   .ab-text-left h5,
@@ -953,53 +1118,87 @@ footer {
   .ab-text-wrap h5 {
     font-size: 1.6rem;
   }
-  .profile-top,
-  .profile-bottom {
-    display: none;
+  .profile-top img,
+  .profile-bottom img {
+    border-radius: 4px;
   }
 
-  /* 공통: 최대 너비 제한 */
+  .content-wrap {
+    height: auto;
+    min-height: 200px;
+    margin: 28px 0 48px;
+    padding: 24px 12px;
+  }
+
+  #product-design .content-wrap img {
+    margin-top: 0;
+  }
+
   .title-wrap,
   #card-design .title-wrap,
   #product-design .title-wrap,
   #magazine-design .title-wrap,
   #motion-graphics .title-wrap,
   #shortform .title-wrap {
-    left: 20px;
-    width: 85%;
+    position: relative;
+    left: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  /* 360px 기준 모바일 비율에 맞춘 개별 너비 조정 */
   #card-design .title-wrap {
-    width: 150px;
+    width: min(42vw, 160px);
   }
   #product-design .title-wrap,
   #motion-graphics .title-wrap {
-    width: 220px;
+    width: min(58vw, 240px);
   }
   #magazine-design .title-wrap {
-    width: 250px;
+    width: min(64vw, 270px);
   }
   #shortform .title-wrap {
-    width: 280px;
+    width: min(78vw, 300px);
+  }
+
+  .view-text {
+    position: relative;
+    left: auto;
+    margin: 16px auto 48px;
+    transform: none;
+  }
+
+  .card-img-wrap {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    min-height: 0;
+  }
+
+  .card1-img,
+  .card2-img {
+    position: relative;
+    left: auto;
+    right: auto;
+    margin: 0;
+    width: 100%;
+    max-width: 320px;
+    z-index: auto;
   }
   /* 카드 디자인 이미지 축소 */
   #card-design .content-wrap img {
-    width: 80%;
-    max-width: 600px;
+    width: 100%;
+    max-width: 320px;
     height: auto;
   }
 
   /* 제품, 매거진 디자인 이미지 축소 */
   #product-design .content-wrap img,
   #magazine-design .content-wrap img {
-    width: 98%;
+    width: 100%;
     height: auto;
-  }
-
-  /* 여백도 화면 비율에 맞춰 축소 */
-  #product-design .content-wrap img {
-    margin-top: 10vw;
   }
 
   .software-wrap {
@@ -1010,24 +1209,16 @@ footer {
     padding-left: 0;
   }
   /* 카드 */
-
   .section-title {
     font-size: 2.6rem;
     font-weight: 600;
     margin-bottom: 20px;
     padding-left: 20px;
   }
-
-  .card1-img {
-    left: 0;
-  }
-  .card2-img {
-    right: 0;
-  }
   /* 프로덕트 */
-
   .slider-container {
-    height: 75vh;
+    height: min(78vh, 640px);
+    margin-top: -24px;
   }
   .card-thumbnail > img {
     width: 100%;
@@ -1041,35 +1232,61 @@ footer {
   .card-detail .long-btns > a {
     font-size: 1.4rem;
   }
-  .short-bg {
-    display: none;
-  }
-  /* 숏폼 2개씩 크게 꽉 채우기 */
+
   .short {
-    margin-top: 40px;
+    margin-top: 32px;
+    padding-bottom: 8px;
   }
 
   .short > ul {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 16px 0;
+    flex-wrap: nowrap;
+    gap: 14px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 4px 4px 16px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
   }
 
   .short > ul > li {
-    width: 48%;
+    flex: 0 0 42vw;
+    max-width: 200px;
+    width: auto;
     margin: 0;
-    flex: none;
+    scroll-snap-align: start;
   }
 
   .short > ul > li > a {
     display: block;
   }
 
-  .short > ul > li > a > img {
+  .short > ul > li > a > img.short-thumnail {
     width: 100%;
+    aspect-ratio: 9 / 16;
     height: auto;
-    object-fit: cover; /* 이미지가 찌그러지지 않게 꽉 채움 */
+    object-fit: cover;
+    border-radius: 0px;
+  }
+
+  .short-bg {
+    height: min(42vh, 320px);
+  }
+
+  @media (hover: none) {
+    .short > ul > li > a > div.short-title {
+      opacity: 1;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent 55%);
+      justify-content: flex-end;
+      padding-bottom: 16px;
+    }
+    .short > ul > li > a > div.short-title > span {
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+    }
+    .short > ul > li > a > div.short-title > img {
+      width: 44px;
+    }
   }
 
   /* thanks you */

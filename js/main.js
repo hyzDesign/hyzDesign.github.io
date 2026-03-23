@@ -1,27 +1,32 @@
 $(function () {
-  // 1. 네비게이션 클릭 이벤트
-  $('.gnb a').each(function (index) {
-    $(this).click(function (e) {
-      e.preventDefault(); // a 태그 기본 동작 방지
+  const headerHeight = () => $('header').outerHeight() || 50;
 
-      // 클릭한 시점의 각 섹션 ID 배열
-      let sections = ['#profile', '#work', '#contact'];
+  // 1. 네비게이션 클릭 — 앵커 기준 스크롤 (모바일 메뉴 닫기 포함)
+  $('.gnb a').on('click', function (e) {
+    const href = $(this).attr('href');
+    if (!href || href.charAt(0) !== '#') return;
+    const $target = $(href);
+    if (!$target.length) return;
+    e.preventDefault();
+    const offsetValue = href === '#contact' ? 0 : headerHeight() + 20;
+    $('html, body')
+      .stop()
+      .animate({ scrollTop: $target.offset().top - offsetValue }, 500);
+    $('body').removeClass('nav-open');
+    $('.btn-menu').attr('aria-expanded', 'false');
+  });
 
-      // 해당 섹션의 현재 위치를 실시간으로 파악
-      let targetTop = $(sections[index]).offset().top;
+  $('.btn-menu').on('click', function () {
+    const open = !$('body').hasClass('nav-open');
+    $('body').toggleClass('nav-open', open);
+    $(this).attr('aria-expanded', open ? 'true' : 'false');
+  });
 
-      // Contact 섹션만 예외 처리가 필요하다면 조건문 추가
-      let offsetValue = sections[index] === '#contact' ? 0 : 100;
-
-      $('html,body')
-        .stop()
-        .animate(
-          {
-            scrollTop: targetTop - offsetValue,
-          },
-          500,
-        );
-    });
+  $(document).on('keydown', function (e) {
+    if (e.key === 'Escape') {
+      $('body').removeClass('nav-open');
+      $('.btn-menu').attr('aria-expanded', 'false');
+    }
   });
 
   // 2. Top 버튼 클릭
