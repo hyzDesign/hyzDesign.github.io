@@ -99,7 +99,7 @@ main section[id] {
   width: 44px;
   height: 44px;
   padding: 10px;
-  margin-right: auto;
+  margin-left: auto;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -200,14 +200,14 @@ body.nav-open .btn-menu-bar:nth-child(3) {
 .about-inner > div {
   display: flex;
   flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .ab-text-left {
   flex: 1;
   text-align: right;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .ab-text-left h5 {
@@ -682,6 +682,7 @@ footer {
   .center {
     width: initial;
     padding: 0px 32px;
+    padding-top: 50px;
   }
   header {
     padding: 10px 0px;
@@ -702,12 +703,13 @@ footer {
 
   .gnb {
     position: fixed;
-    top: 50px;
+    top: 0;
     left: 0;
     right: 0;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 22px;
+    gap: 50px;
     padding: 28px 20px 32px;
     margin: 0;
     background: rgba(17, 17, 17, 0.98);
@@ -733,7 +735,7 @@ footer {
   .gnb > a {
     margin-left: 0;
     font-size: 1.5rem;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
   }
   .section-title {
     font-size: 3.6rem;
@@ -785,6 +787,7 @@ footer {
   .ab-img-wrap {
     width: 100%;
     order: 1;
+    max-width: 100%;
   }
 
   .ab-text-left {
@@ -816,6 +819,39 @@ footer {
     height: auto;
   }
 
+  /* 섹션을 flex로 만들어 order로 순서 재배치 */
+  #card-design,
+  #product-design,
+  #magazine-design {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #card-design .title-wrap,
+  #product-design .title-wrap,
+  #magazine-design .title-wrap {
+    order: 1;
+  }
+
+  #card-design .view-text,
+  #product-design .view-text,
+  #magazine-design .view-text {
+    order: 2;
+  }
+
+  #card-design .software-wrap,
+  #product-design .software-wrap,
+  #magazine-design .software-wrap {
+    order: 3;
+  }
+
+  #card-design .content-wrap,
+  #product-design .content-wrap,
+  #magazine-design .content-wrap {
+    order: 4;
+  }
+  /* 끝 */
+
   .profiletext-img {
     max-width: min(40%, 180px);
   }
@@ -835,7 +871,7 @@ footer {
     display: block;
     width: fit-content;
     max-width: 200px;
-    margin: 24px auto 64px;
+    margin: 24px auto 0px;
     transform: none;
   }
 
@@ -881,8 +917,14 @@ footer {
   /* 모션그래픽 */
   #motion-graphics .title-wrap {
     position: relative;
-    left: 120px;
+    left: 0;
     width: 370px;
+  }
+  .motiontitle-img {
+    padding-left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   /* 카드 디자인 이미지 축소 */
@@ -906,6 +948,12 @@ footer {
   }
 
   /* 숏폼 */
+
+  #shortform-gallery {
+    width: 100%;
+    background-image: url(/image/skyblue_noise.png);
+  }
+
   #shortform .title-wrap {
     position: relative;
     left: 0;
@@ -916,10 +964,6 @@ footer {
     display: block;
     margin-left: auto;
     margin-right: auto;
-  }
-  #shortform-gallery {
-    width: 100%;
-    background-color: #69f;
   }
 
   .long-list > li {
@@ -1027,12 +1071,14 @@ footer {
     padding: 0 10px;
   }
   #main-visual p {
-    width: 92%;
+    /* width: 92%;
     max-width: 360px;
     font-size: 1.2rem;
     line-height: 1.5;
     margin-top: 28px;
-    padding: 0 8px;
+    padding: 0 8px; */
+    width: 70%;
+    font-size: 1.6rem;
   }
 
   .gnb > a {
@@ -1047,8 +1093,6 @@ footer {
     font-weight: 600;
     margin-bottom: 20px;
   }
-
-  /* 숏폼 2개씩 크게 꽉 채우기 */
   .section-sub-title {
     font-family: 'Prata', serif;
     font-size: 2rem;
@@ -1176,7 +1220,7 @@ footer {
   .view-text {
     position: relative;
     left: auto;
-    margin: 16px auto 48px;
+    margin: 16px auto 0px;
     transform: none;
   }
 
@@ -1228,7 +1272,6 @@ footer {
     margin-bottom: 20px;
     padding-left: 20px;
   }
-  /* 프로덕트 */
   .slider-container {
     height: min(78vh, 640px);
     margin-top: -24px;
@@ -1245,6 +1288,8 @@ footer {
   .card-detail .long-btns > a {
     font-size: 1.4rem;
   }
+
+  /* shortform */
 
   .short {
     margin-top: 32px;
@@ -1279,7 +1324,7 @@ footer {
     aspect-ratio: 9 / 16;
     height: auto;
     object-fit: cover;
-    border-radius: 0px;
+    border-radius: 10px;
   }
 
   .short-bg {
