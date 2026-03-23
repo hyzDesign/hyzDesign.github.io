@@ -186,6 +186,16 @@ body.nav-open .btn-menu-bar:nth-child(3) {
   font-size: 16px;
   color: white;
 }
+.main-nav a {
+  color: white;
+  font-weight: inherit;
+  text-decoration: none;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+  color: #c084fc;
+}
 
 #profile {
   margin-top: 80px;
@@ -646,6 +656,13 @@ button {
   margin-top: 150px;
 }
 
+#thanksyou img {
+  max-width: 800px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
 /* footer */
 footer {
   text-align: center;
@@ -709,7 +726,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 50px;
+    gap: 20px;
     padding: 28px 20px 32px;
     margin: 0;
     background: rgba(17, 17, 17, 0.98);
@@ -743,7 +760,7 @@ footer {
     margin-bottom: 40px;
   }
   .content-wrap {
-    height: auto;
+    /* height: auto; */
     min-height: 280px;
     margin: 48px 0 80px;
     padding: 32px 16px;
@@ -1324,7 +1341,6 @@ footer {
     aspect-ratio: 9 / 16;
     height: auto;
     object-fit: cover;
-    border-radius: 10px;
   }
 
   .short-bg {
@@ -1371,3 +1387,10 @@ footer {
     bottom: 60px;
   }
 } /* mobile End */
+
+/* 특수상황 */
+@media screen and (max-width: 350px) {
+  .main-nav .divider {
+    display: none;
+  }
+}
