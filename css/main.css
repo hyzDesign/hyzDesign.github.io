@@ -177,10 +177,10 @@ header {
   padding-bottom: 20px;
 }
 
-.profiletop {
+.profile-top {
   opacity: 50%;
 }
-.profiletop img {
+.profile-top img {
   width: 100%;
 }
 
@@ -660,7 +660,7 @@ footer {
     line-height: 1.4;
   }
 
-  .profiletop img,
+  .profile-top img,
   .profile-bottom img,
   .profileimg-img {
     width: 100%;
@@ -675,10 +675,7 @@ footer {
   .skill-logo img {
     width: 60%;
     padding-bottom: 2vw;
-  }
-
-  .skill-logo img {
-    margin: 0 auto;
+    margin-left: auto;
   }
   .software-wrap {
     display: none;
@@ -824,37 +821,41 @@ footer {
 }
 /* tablet large End */
 
+/* tablet small */
 @media screen and (min-width: 768px) and (max-width: 900px) {
   .about-inner {
     display: block;
     width: 80%;
+    max-width: 480px;
   }
-  .ab-img-wrap {
-    width: 70%;
-    margin: 0px auto;
+  .about-inner > div {
+    margin-bottom: 30px;
+  }
+  .about-inner > div:last-child {
+    margin-bottom: 0;
   }
   .ab-img-wrap > img {
     width: 100%;
   }
-  .ab-img-wrap .profileimg-img {
-    min-width: 200px;
-  }
   .ab-text-wrap {
-    width: 80%;
     padding-left: 0;
     margin: 28px auto 0 auto;
   }
-  .ab-text-wrap > h4 {
+  /* 텍스트 크기 축소 */
+  .ab-text-left h5,
+  .ab-text-right h5 {
     font-size: 2.2rem;
+    margin: 0.5vw 0;
   }
-  .ab-text-wrap > h5 {
+
+  .about-inner ul li {
     font-size: 1.6rem;
-    margin: 24px 0px;
+    line-height: 1.4;
   }
-  .ab-text-wrap h5 {
-    font-size: 1.6rem;
+  .ab-text-wrap > h4 {
   }
 }
+/* tablet small End */
 
 /* mobile */
 @media screen and (max-width: 767px) {
@@ -910,36 +911,32 @@ footer {
     margin-bottom: 40px;
     text-align: center;
   }
+
   #about {
     margin-top: calc((100vw * 9 / 16) + 60px);
     text-align: center;
+    width: 100%;
   }
   .about-inner {
     display: block;
-    width: 80%;
+    width: 90%;
+    max-width: 480px;
   }
-
   /* 텍스트 크기 축소 */
   .ab-text-left h5,
   .ab-text-right h5 {
     font-size: 1.6rem;
     margin: 0.5vw 0;
   }
-
   .about-inner ul li {
     font-size: 1.6rem;
     line-height: 1.4;
   }
-
   .ab-img-wrap {
-    width: 70%;
     margin: 0px auto;
   }
   .ab-img-wrap > img {
     width: 100%;
-  }
-  .ab-img-wrap .profileimg-img {
-    min-width: 200px;
   }
   .ab-text-wrap {
     width: 80%;
@@ -956,6 +953,11 @@ footer {
   .ab-text-wrap h5 {
     font-size: 1.6rem;
   }
+  .profile-top,
+  .profile-bottom {
+    display: none;
+  }
+
   /* 공통: 최대 너비 제한 */
   .title-wrap,
   #card-design .title-wrap,
