@@ -33,7 +33,6 @@ h4 {
   text-align: right;
   padding-top: 20px;
   padding-bottom: 20px;
-  padding-right: 240px;
 }
 
 /*img, iframe{vertical-align: top;}*/
@@ -148,16 +147,20 @@ header {
 }
 .about-inner {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
-  gap: 60px;
+  gap: 40px;
   margin: 0 auto;
+}
+.about-inner > div {
+  display: flex;
+  flex-direction: column;
 }
 
 .ab-text-left {
-  width: 33.3%;
+  justify-content: flex-end;
+  flex: 1;
   text-align: right;
-  padding-right: 0.5rem;
 }
 
 .ab-text-left h5 {
@@ -179,7 +182,6 @@ header {
 }
 .profiletop img {
   width: 100%;
-  min-width: 250px;
 }
 
 .ab-img-wrap {
@@ -188,53 +190,29 @@ header {
   margin: 0 auto;
 }
 .ab-img-wrap .profileimg-img {
-  min-width: 320px;
-}
-
-.profileimg-img {
-  display: inline-block;
-  position: relative; /* z-index 적용 */
-  height: 100%;
-  z-index: 1; /* design circle 아래 */
+  width: 100%;
 }
 
 .profiletext-img {
   position: absolute; /* portfolio text 위에 */
   top: -10%; /* 조정 가능 */
-  left: 25%; /* 수평 중앙 */
-  max-width: 180px;
+  left: 50%; /* 수평 중앙 */
+  transform: translateX(-50%);
   z-index: 2; /* portfolio text 위 */
 }
-
-/*
-.ab-img-wrap > img {
-  width: 100%;
-  object-fit: cover;
-}
-*/
-
 .profile-bottom {
   opacity: 50%;
 }
 .profile-bottom img {
   width: 100%;
-  min-width: 250px;
 }
 
 .ab-text-right {
-  width: 33.3%;
+  justify-content: flex-start;
+  flex: 1;
   text-align: left;
-  padding-right: 0.5rem;
 }
 
-/*
-.ab-text-right {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-left: 10rem;
-}
-*/
 .ab-text-right h5 {
   font-size: 2rem;
   font-weight: 500;
@@ -286,11 +264,16 @@ header {
   background-image: url(/image/skyblue_noise.png);
 }
 
-.softwaretext-img {
+.software-wrap {
+  width: fit-content;
+  margin-left: auto;
+  padding-right: 150px;
+  text-align: right;
+}
+.software-img {
+  position: relative;
   display: block;
   margin-left: auto;
-  text-align: right;
-  padding-right: 240px;
 }
 
 /* 카드 */
@@ -323,17 +306,20 @@ header {
   width: 600px;
 }
 
-#product-design .content-wrap {
-  margin-top: 50px;
+#product-design .content-wrap img {
+  width: 1200px;
+  margin-top: 150px;
 }
 
 #magazine-design .content-wrap img {
-  width: 1300px;
+  width: 1200px;
 }
 
 .view-text {
+  position: relative;
+  left: 120px;
+  width: 200px;
   margin-top: 70px;
-  margin-left: 240px;
   margin-bottom: 100px;
 }
 
@@ -352,19 +338,7 @@ header {
   z-index: 2; /* portfolio text 위 */
 }
 
-#product-design .content-wrap img {
-  margin-top: 200px;
-  width: 1300px;
-}
-
 /* magazine */
-.software-img {
-  display: block;
-  margin-left: auto;
-  text-align: right;
-  padding-right: 240px;
-}
-
 /* motion graphics */
 /* work */
 .card-thumbnail > img {
@@ -428,6 +402,7 @@ header {
   justify-content: center;
   margin-top: -100px;
   height: 700px;
+  overflow: hidden;
 }
 
 .slider-bg {
@@ -634,8 +609,8 @@ footer {
   opacity: 1;
 }
 
-/* tablet */
-@media screen and (min-width: 768px) and (max-width: 1199px) {
+/* tablet large */
+@media screen and (max-width: 1199px) {
   body {
     font-size: 1.4rem;
   }
@@ -666,23 +641,44 @@ footer {
   #about {
     margin-top: calc((100vw * 9 / 16) + 80px);
   }
-
+  /* 부모 컨테이너 비율 맞춤 */
   .about-inner {
-    width: 90%;
-    gap: 30px;
-    margin: 0 auto;
-  }
-  .ab-img-wrap > img {
     width: 100%;
+    padding: 0 2vw;
+    gap: 2vw;
   }
-  .ab-text-wrap {
-    padding-left: 6rem;
+
+  /* 텍스트 크기 축소 */
+  .ab-text-left h5,
+  .ab-text-right h5 {
+    font-size: 1.6vw; /* 화면 너비에 비례하여 글자 크기 조절 */
+    margin: 0.5vw 0;
   }
-  .ab-text-wrap > h4 {
-    font-size: 2.8rem;
+
+  .about-inner ul li {
+    font-size: 1.2vw;
+    line-height: 1.4;
   }
-  .ab-text-wrap > h5 {
-    font-size: 1.6rem;
+
+  .profiletop img,
+  .profile-bottom img,
+  .profileimg-img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* 장식 이미지 */
+  .profiletext-img {
+    max-width: 15vw;
+  }
+  /* 여백 및 스킬 로고 축소 */
+  .skill-logo img {
+    width: 60%;
+    padding-bottom: 2vw;
+  }
+
+  .skill-logo img {
+    margin: 0 auto;
   }
   .software-wrap {
     display: none;
@@ -754,6 +750,26 @@ footer {
     margin-right: auto;
   }
 
+  /* 카드 디자인 이미지 축소 */
+  #card-design .content-wrap img {
+    width: 80%;
+    max-width: 600px;
+    height: auto;
+  }
+
+  /* 제품, 매거진 디자인 이미지 축소 */
+  #product-design .content-wrap img,
+  #magazine-design .content-wrap img {
+    width: 90%;
+    max-width: 1200px;
+    height: auto;
+  }
+
+  /* 여백도 화면 비율에 맞춰 축소 */
+  #product-design .content-wrap img {
+    margin-top: 10vw;
+  }
+
   /* 숏폼 */
   #shortform .title-wrap {
     position: relative;
@@ -805,7 +821,40 @@ footer {
   footer {
     padding-bottom: 40px;
   }
-} /* tablet End */
+}
+/* tablet large End */
+
+@media screen and (min-width: 768px) and (max-width: 900px) {
+  .about-inner {
+    display: block;
+    width: 80%;
+  }
+  .ab-img-wrap {
+    width: 70%;
+    margin: 0px auto;
+  }
+  .ab-img-wrap > img {
+    width: 100%;
+  }
+  .ab-img-wrap .profileimg-img {
+    min-width: 200px;
+  }
+  .ab-text-wrap {
+    width: 80%;
+    padding-left: 0;
+    margin: 28px auto 0 auto;
+  }
+  .ab-text-wrap > h4 {
+    font-size: 2.2rem;
+  }
+  .ab-text-wrap > h5 {
+    font-size: 1.6rem;
+    margin: 24px 0px;
+  }
+  .ab-text-wrap h5 {
+    font-size: 1.6rem;
+  }
+}
 
 /* mobile */
 @media screen and (max-width: 767px) {
@@ -869,6 +918,19 @@ footer {
     display: block;
     width: 80%;
   }
+
+  /* 텍스트 크기 축소 */
+  .ab-text-left h5,
+  .ab-text-right h5 {
+    font-size: 1.6rem;
+    margin: 0.5vw 0;
+  }
+
+  .about-inner ul li {
+    font-size: 1.6rem;
+    line-height: 1.4;
+  }
+
   .ab-img-wrap {
     width: 70%;
     margin: 0px auto;
@@ -894,24 +956,48 @@ footer {
   .ab-text-wrap h5 {
     font-size: 1.6rem;
   }
-  #skill {
-    margin: 100px 0px;
+  /* 공통: 최대 너비 제한 */
+  .title-wrap,
+  #card-design .title-wrap,
+  #product-design .title-wrap,
+  #magazine-design .title-wrap,
+  #motion-graphics .title-wrap,
+  #shortform .title-wrap {
+    left: 20px;
+    width: 85%;
   }
-  #skill h4 {
-    margin-bottom: 16px;
+
+  /* 360px 기준 모바일 비율에 맞춘 개별 너비 조정 */
+  #card-design .title-wrap {
+    width: 150px;
   }
-  #skill h4 > strong {
-    font-size: 2.2rem;
+  #product-design .title-wrap,
+  #motion-graphics .title-wrap {
+    width: 220px;
   }
-  #skill > ul {
-    flex-wrap: wrap;
+  #magazine-design .title-wrap {
+    width: 250px;
   }
-  #skill > ul > li {
-    width: 50%;
-    margin-bottom: 40px;
+  #shortform .title-wrap {
+    width: 280px;
   }
-  #skill > ul > li:last-child {
-    margin-bottom: 0px;
+  /* 카드 디자인 이미지 축소 */
+  #card-design .content-wrap img {
+    width: 80%;
+    max-width: 600px;
+    height: auto;
+  }
+
+  /* 제품, 매거진 디자인 이미지 축소 */
+  #product-design .content-wrap img,
+  #magazine-design .content-wrap img {
+    width: 98%;
+    height: auto;
+  }
+
+  /* 여백도 화면 비율에 맞춰 축소 */
+  #product-design .content-wrap img {
+    margin-top: 10vw;
   }
 
   .software-wrap {
@@ -922,15 +1008,19 @@ footer {
     padding-left: 0;
   }
   /* 카드 */
-  #card-design .content-wrap img {
-    width: 400px;
+
+  .section-title {
+    font-size: 2.6rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-left: 20px;
   }
-  #card-design .card1-img {
-    margin-left: 0;
+
+  .card1-img {
+    left: 0;
   }
-  #card-design .card2-img {
-    margin-top: 250px;
-    margin-right: 0;
+  .card2-img {
+    right: 0;
   }
   /* 프로덕트 */
 
@@ -952,22 +1042,32 @@ footer {
   .short-bg {
     display: none;
   }
-
+  /* 숏폼 2개씩 크게 꽉 채우기 */
   .short {
     margin-top: 40px;
   }
+
+  .short > ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 16px 0;
+  }
+
   .short > ul > li {
-    width: 47%;
+    width: 48%;
+    margin: 0;
+    flex: none;
   }
-  .short > ul > li:nth-last-child(2n-1) {
-    margin-left: 6%;
-    margin-bottom: 20px;
-  }
+
   .short > ul > li > a {
     display: block;
   }
+
   .short > ul > li > a > img {
     width: 100%;
+    height: auto;
+    object-fit: cover; /* 이미지가 찌그러지지 않게 꽉 채움 */
   }
 
   /* thanks you */
@@ -981,8 +1081,7 @@ footer {
     margin: 60px 0px;
   }
   #contact .contact-list {
-    display: block;
-    padding: 20px 0;
+    padding: 50px 0;
   }
   #contact .contact-list li {
     padding: 5px 0;

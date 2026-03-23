@@ -5,7 +5,7 @@ $(function () {
       e.preventDefault(); // a 태그 기본 동작 방지
 
       // 클릭한 시점의 각 섹션 ID 배열
-      let sections = ['#profile', '#skill', '#work', '#contact'];
+      let sections = ['#profile', '#work', '#contact'];
 
       // 해당 섹션의 현재 위치를 실시간으로 파악
       let targetTop = $(sections[index]).offset().top;
