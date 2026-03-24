@@ -1364,8 +1364,12 @@ footer {
   }
 
   /* thanks you */
+  #thanksyou {
+    text-align: center;
+  }
   #thanksyou img {
     width: 90%;
+    margin: 0 auto;
   }
   #contact {
     display: flex;
