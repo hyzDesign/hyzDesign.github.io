@@ -892,6 +892,10 @@ footer {
     transform: none;
   }
 
+  #magazine-design .view-text {
+    margin-bottom: 40px;
+  }
+
   .title-wrap {
     padding-left: 0;
     display: block;
