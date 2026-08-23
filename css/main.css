@@ -333,6 +333,62 @@ body.nav-open .btn-menu-bar:nth-child(3) {
   margin-left: auto;
 }
 
+/* =========================
+   VEHICLE DESIGN
+========================= */
+
+#vehicle-design {
+  width: 100%;
+  position: relative;
+  padding-top: 50px;
+}
+
+/* 제목 - Card Design과 동일한 위치 */
+#vehicle-design .title-wrap {
+  position: relative;
+  left: 120px;
+  width: 260px;
+  margin: 0;
+}
+
+#vehicle-design .vehicletext-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+
+/* 자동차 들어가는 하늘색 영역 */
+#vehicle-design .content-wrap {
+  width: 100%;
+  height: 414px;
+
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url(/image/skyblue_noise.png);
+
+  position: relative;
+  overflow: visible;
+}
+
+
+/* 자동차 */
+#vehicle-design .vehicle-img {
+  display: block;
+  width: auto;
+  max-width: 1350px;
+  max-height: 650px;
+  height: auto;
+  object-fit: contain;
+}
+
+
 /* 카드 */
 .card-img-wrap {
   width: 900px;
