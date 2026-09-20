@@ -894,33 +894,38 @@ footer {
 
   /* 섹션을 flex로 만들어 order로 순서 재배치 */
   #card-design,
-  #product-design,
-  #magazine-design {
-    display: flex;
-    flex-direction: column;
-  }
+#product-design,
+#magazine-design,
+#vehicle-design {
+  display: flex;
+  flex-direction: column;
+}
 
   #card-design .title-wrap,
   #product-design .title-wrap,
-  #magazine-design .title-wrap {
+  #magazine-design .title-wrap,
+  #vehicle-design .title-wrap {
     order: 1;
   }
 
   #card-design .view-text,
   #product-design .view-text,
-  #magazine-design .view-text {
+  #magazine-design .view-text,
+  #vehicle-design .view-text {
     order: 2;
   }
 
   #card-design .software-wrap,
   #product-design .software-wrap,
-  #magazine-design .software-wrap {
+  #magazine-design .software-wrap,
+  #vehicle-design .software-wrap {
     order: 3;
   }
 
   #card-design .content-wrap,
   #product-design .content-wrap,
-  #magazine-design .content-wrap {
+  #magazine-design .content-wrap,
+  #vehicle-design .content-wrap {
     order: 4;
   }
   /* 끝 */
@@ -958,6 +963,7 @@ footer {
     margin-left: auto;
     margin-right: auto;
   }
+
   .card-img-wrap {
     width: 100%;
     max-width: 560px;
@@ -979,6 +985,37 @@ footer {
   #product-design .content-wrap {
     margin-top: 48px;
   }
+
+  /* 자동차 디자인 */
+#vehicle-design .title-wrap {
+  position: relative;
+  left: 0;
+  width: 240px;
+  margin: 0 auto;
+}
+
+#vehicle-design .view-text {
+  position: relative;
+  left: 0;
+  width: fit-content;
+  max-width: 200px;
+  margin: 24px auto 0;
+  transform: none;
+}
+
+#vehicle-design .vehicle-img {
+  width: 75%;
+  max-width: 700px;
+  height: auto;
+}
+
+#vehicle-design .content-wrap {
+  height: 340px;
+  min-height: 280px;
+  margin: 40px 0 72px;
+  padding: 32px 16px;
+}
+
   /* 매거진 */
   #magazine-design .title-wrap {
     position: relative;
@@ -1327,6 +1364,39 @@ footer {
     max-width: 320px;
     height: auto;
   }
+
+/* 모바일 자동차 크기 */
+#vehicle-design .vehicle-img {
+  width: 80%;
+  max-width: 320px;
+  height: auto;
+}
+
+@media screen and (max-width: 767px) {
+
+  #vehicle-design .content-wrap {
+    height: 260px;
+    min-height: 260px;
+  }
+
+  #vehicle-design .vehicle-img {
+    width: 82%;
+    max-width: 340px;
+    height: auto;
+  }
+
+}
+
+/* mobile */
+@media screen and (max-width: 767px) {
+  #vehicle-design .title-wrap {
+    position: relative;
+    left: auto;
+    width: min(58vw, 240px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 
   /* 제품, 매거진 디자인 이미지 축소 */
   #product-design .content-wrap img,
